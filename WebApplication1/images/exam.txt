@@ -1,0 +1,16 @@
+14-15 remise tèpè
+19 exam java
+20 exam web
+22 oral pas important 8h30
+
+
+Mardi 19 mai de 12h à 15h	Examen final Java (420-AT6)	B-414
+Mardi 19 mai à minuit	Date limite de remise des projets Hypermédia I (420-AU5)	
+Mercredi 20 mai de 15h à 18h	Examen final Hypermédia I (420-AU5)	B-414
+Vendredi 22 mai de 8h30 à 16h	Présentation des projets Hypermédia I (420-AU5)	B-414
+
+ajouter fichier Jar
+right click properties chercher
+
+new junit(if not go to other then "juunit")
+run test

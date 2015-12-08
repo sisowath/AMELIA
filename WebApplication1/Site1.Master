@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Master Page</title>    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>    
+    <!-- fichiers CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- fichier JS-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/npm.js"></script>
+    <script src="js/angular.min.js"></script>
+    <style type="text/css">
+        #pageAccueil {
+            background-image : url('images/amelia_wallpaper.jpg');
+        }
+    </style>
+    <style type="text/css">
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      .footer {
+        /*position: absolute;*/
+        bottom: 0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap > .container {
+        padding-top: 60px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+      code {
+        font-size: 80%;
+      }
+      .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <nav class="navbar navbar-default navnar-fixed-top">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="accueil.aspx">
+                    <img alt="Brand" src="images/facebook_icon.png" height="50">
+                  </a>
+                    <h1 style="text-align:center">AMÉLIA</h1>  
+                    <nav>
+                    <a href="accueil.aspx" class="btn btn-primary btn-lg enabled" role="button">Accueil |</a>
+                    <a href="profile.aspx" class="btn btn-primary btn-lg">Mon profil |</a>
+                    <a href="match.aspx" class="btn btn-primary btn-lg">Mes futures rencontres |</a>
+                    <a href="achat.aspx" class="btn btn-primary btn-lg">Achat |</a>
+                    <% 
+                        if (Session["profile"] == null)
+                        {
+                    %> 
+                            <a href="create.aspx" class="btn btn-primary btn-lg">Créer un compte |</a>
+                    <%
+                        }
+                    %>
+                    <a href="logout.aspx" class="btn btn-warning btn-lg">Me déconnecter</a>
+                    </nav>
+                </div>
+              </div>
+            </nav>
+            <!--
+            <div class="page-header">
+                <h1 style="text-align:center">AMÉLIA</h1>   
+                <nav style="text-align:center">
+                    <a href="accueil.aspx" class="btn btn-primary btn-lg enabled" role="button">Accueil |</a>
+                    <a href="profile.aspx" class="btn btn-primary btn-lg">Mon profile |</a>
+                    <a href="match.aspx" class="btn btn-primary btn-lg">Mes futures rencontres |</a>
+                    <a href="create.aspx" class="btn btn-primary btn-lg">creer un compte |</a>
+                    <a href="logout.aspx" class="btn btn-warning btn-lg">Me déconnecter</a>
+                </nav>
+            </div>        
+            -->
+            <form class="form-signin">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+            </form>            
+        </div><!-- fin container -->
+        <footer class="footer">
+            <div class="container">
+                <h1>Site conçu par : <span class="btn btn-primary btn-lg">Kismony</span> et <span class="btn btn-warning btn-lg">Samnang</span> - Automne 2015 </h1>
+            </div>
+        </footer>
+    </form>
+    <style type="text/css">
+        .footer  {
+            background: #F4FA58 !important;/* Adding !important forces the browser to overwrite the default style applied by Bootstrap 
+            background-image : url("images/amelia_wallpaper.jpg");      
+            background-repeat : no-repeat;*/
+        } 
+    </style>
+</body>
+</html>
